@@ -1,36 +1,19 @@
 package com.company;
-
-import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        //Take input from user for amount they need, interest on it and the time period they are borrowing in years
-        System.out.print("Principal: ");
-        int principal = input.nextInt();
-
-        System.out.print("Annual Interest Rate: ");
-        float interest = input.nextFloat();
-
-        System.out.print("Period: ");
-        byte period = input.nextByte();
-
-        final byte percent = 100;
-        final byte months_per_year = 12;
-        // r is interest per month
-        double r = (interest / percent) /months_per_year;
-        // n = numbers of months the lender will be paying the loan
-        int n = period * months_per_year;
-        // calculate the mortgage per month
-        double mortgage = principal * ((r * Math.pow(1 + r, n))/ (Math.pow(1+r,n)-1));
-        // convert the mortgage calculated to currency value
-
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        String result = currency.format(mortgage);
-        System.out.println("Mortgage: " + result);
-
-        
+        Scanner scanner = new Scanner(System.in);
+        int temperature;
+        System.out.print("what is the temperature out today: ");
+        temperature = scanner.nextInt();
+        if (temperature > 65){
+            System.out.println("it's hot outside");
+        }else if (temperature >= 40 && temperature <= 65){
+            System.out.println("beautiful day. Go out and have fun!");
+        } else {
+            System.out.println("it's cold today. Cover yourself properly before going out");
+        }
             }
 }
